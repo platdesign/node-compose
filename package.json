@@ -1,0 +1,21 @@
+{
+  "name": "node-compose",
+  "description": "start node-processes as with docker-compose",
+  "author": "Christian Blaschke <mail@platdesign.de>",
+  "version": "0.0.0",
+  "dependencies": {
+    "colors": "^1.1.2",
+    "is": "^3.1.0",
+    "js-yaml": "^3.6.1",
+    "nodemon": "^1.9.2",
+    "ps-tree": "^1.1.0",
+    "rx": "^4.1.0",
+    "vorpal": "^1.11.2",
+    "which": "^1.2.10"
+  },
+  "repository": "",
+  "main": "./index.js",
+  "bin": {
+    "bn": "bin/bn.js"
+  }
+}
