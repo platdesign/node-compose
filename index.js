@@ -107,7 +107,7 @@ logger.subscribe((msg) => {
 
 
 service.find('exit')
-.description('Close bootnode and kill all processes')
+.description('Close shell and kill all processes')
 .action(function() {
 	Object.keys(processStore).forEach((name) => {
 		let p = processStore[name];
@@ -184,7 +184,7 @@ service
 
 
 service
-	.delimiter('bootnode $')
+	.delimiter('node-compose $')
 	.show();
 
 
