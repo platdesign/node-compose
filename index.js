@@ -14,10 +14,22 @@ const nodemon = require('nodemon');
 const colors = require('colors');
 const is = require('is');
 
-const composeFile = path.join(CWD, 'bn-compose.yml');
+const composeFileName = process.argv[2] || 'node-compose.yml';
+const composeFile = path.join(CWD, composeFileName);
 
-const config = Yaml.safeLoad(fs.readFileSync(composeFile, 'utf8'));
+if(!fs.existsSync(composeFile)) {
+	console.log((`File not found: ${composeFileName}`).red);
+	process.exit(1);
+}
 
+let config;
+try {
+	console.log((`Using config from: ${composeFileName}`).cyan);
+	config = Yaml.safeLoad(fs.readFileSync(composeFile, 'utf8'));
+} catch(e) {
+	console.log('Invalid yaml file.'.red);
+	process.exit(1);
+}
 
 
 const service = Vorpal();
