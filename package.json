@@ -1,7 +1,11 @@
 {
   "name": "node-compose",
   "description": "start node-processes as with docker-compose",
-  "author": "Christian Blaschke <mail@platdesign.de>",
+  "author": {
+    "name": "Christian Blaschke",
+    "email": "mail@platdesign.de",
+    "url": "https://github.com/platdesign"
+  },
   "version": "0.0.0",
   "dependencies": {
     "colors": "^1.1.2",
@@ -13,9 +17,24 @@
     "vorpal": "^1.11.2",
     "which": "^1.2.10"
   },
-  "repository": "",
+  "repository": "git@github.com:platdesign/node-compose.git",
+  "homepage": "https://github.com/platdesign/node-compose",
   "main": "./index.js",
   "bin": {
     "bn": "bin/bn.js"
-  }
+  },
+  "keywords": [
+    "microservices",
+    "multiprocess",
+    "docker",
+    "docker-compose",
+    "dev",
+    "devtools",
+    "devhelper",
+    "manage",
+    "nodejs",
+    "javascript",
+    "ilovejs"
+  ],
+  "license": "MIT"
 }
