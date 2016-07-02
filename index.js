@@ -94,6 +94,7 @@ const restartProcessByName = function(name) {
 
 
 
+
 logger.subscribe((msg) => {
 
 	if(msg.type === 'log') {
@@ -109,14 +110,8 @@ logger.subscribe((msg) => {
 service.find('exit')
 .description('Close shell and kill all processes')
 .action(function() {
-	Object.keys(processStore).forEach((name) => {
-		let p = processStore[name];
-
-		p.kill();
-	});
+	Object.keys(processStore).forEach(stopProcessByName);
 });
-
-
 
 
 
