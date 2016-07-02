@@ -1,4 +1,4 @@
-#bootnode
+#node-compose
 
 Start node-processes as with docker-compose.
 
@@ -9,7 +9,7 @@ Start node-processes as with docker-compose.
 `npm install -g node-compose`
 
 
-#Use
+#Example
 
 Create multiple servers. (eg for multiple microservices)
 
@@ -66,6 +66,19 @@ process_b:
 ```
 
 Start node-compose shell with `node-compose`. Inside the shell start all processes with `start-all` or type `help` for more information about possible commands.
+
+# Commands
+
+```bash
+Commands:
+	help [command...]  Provides help for a given command.
+	exit               Close bootnode and kill all processes
+	start <name>       Start a process. Use `all` to start all
+	stop <name>        Stop a process. Use `all` to stop all
+	restart <name>     Restart a process. Use `all` to restart all
+	ps                 Display all processes
+```
+
 
 #Author
 
