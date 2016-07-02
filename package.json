@@ -21,7 +21,7 @@
   "homepage": "https://github.com/platdesign/node-compose",
   "main": "./index.js",
   "bin": {
-    "bn": "bin/bn.js"
+    "node-compose": "bin/bn.js"
   },
   "keywords": [
     "microservices",
