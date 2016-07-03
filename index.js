@@ -179,6 +179,17 @@ service
 
 
 service
+	.command('images')
+	.action(function(args, callback) {
+
+		this.log(Object.keys(config));
+
+		callback();
+	});
+
+
+
+service
 	.delimiter('node-compose $')
 	.show();
 
