@@ -13,6 +13,8 @@ const killpid = require('./lib/killpid');
 const nodemon = require('nodemon');
 const colors = require('colors');
 const is = require('is');
+const Table = require('cli-table');
+
 
 const composeFileName = process.argv[2] || 'node-compose.yml';
 const composeFile = path.join(CWD, composeFileName);
@@ -126,6 +128,8 @@ service
 			startProcessByName(args.name);
 		}
 
+		this.log(	getPsView(processStore)	);
+
 		callback();
 
 	});
@@ -166,23 +170,40 @@ service
 			restartProcessByName(args.name);
 		}
 
+		this.log(	getPsView(processStore)	);
+
 		callback();
 	})
+
 
 
 service
 	.command('ps', 'Display all processes')
 	.action(function(args, callback) {
-		this.log(Object.keys(processStore));
+		this.log(	getPsView(processStore)	);
 		callback();
-	})
+	});
+
 
 
 service
-	.command('images')
+	.command('images', 'Display all available processes')
 	.action(function(args, callback) {
 
-		this.log(Object.keys(config));
+		let values = Object.keys(config)
+		.map((name, index) => {
+			let item = config[name];
+
+			return [index+1, name, path.resolve(CWD, item.build)];
+		});
+
+		this.log(
+			createTableView(
+				`Available images (${values.length})`,
+				['No', 'Name', 'Path'],
+				values
+			)
+		);
 
 		callback();
 	});
@@ -276,5 +297,47 @@ function startProcess(name, pConf) {
 }
 
 
+
+
+function createTableString(header, data) {
+
+	let table = new Table({
+		head: header.map((item) => {
+			return (item).cyan
+		})
+	});
+
+	table.push.apply(table, data);
+	return table.toString();
+}
+
+
+
+
+function createTableView(title, head, data) {
+	return createView(title, createTableString(head, data) );
+}
+
+function createView(title, content, footer) {
+	return `\n${(title).bold}\n${content}\n\n${footer||''}`;
+}
+
+
+
+function getPsView(processStore) {
+
+	let values = Object.keys(processStore)
+	.map((name, index) => {
+		let p = processStore[name];
+		return [index+1, name];
+	});
+
+	return createTableView(
+		`Running processes (${values.length})`,
+		['No', 'Name'],
+		values
+	);
+
+}
 
 
