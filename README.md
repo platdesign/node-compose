@@ -3,13 +3,18 @@
 Start node-processes as with docker-compose.
 
 
+# Prerequisite
 
-#Install
+`node-compose` needs [nodemon](http://nodemon.io/) to be installed globally.
+
+Install [nodemon](http://nodemon.io/): `npm install -g nodemon`
+
+# Install
 
 `npm install -g node-compose`
 
 
-#Example
+# Example
 
 Create multiple servers. (eg for multiple microservices)
 
@@ -72,14 +77,22 @@ Start node-compose shell with `node-compose`. Inside the shell start all process
 ```bash
 Commands:
 	help [command...]  Provides help for a given command.
-	exit               Close bootnode and kill all processes
+	exit               Close shell and kill all processes
 	start <name>       Start a process. Use `all` to start all
 	stop <name>        Stop a process. Use `all` to stop all
 	restart <name>     Restart a process. Use `all` to restart all
 	ps                 Display all processes
+	images             Display all available processes
 ```
 
 
-#Author
+# Todo
+
+- Use nodemon as a module to avoid global dep.
+- Add more information about running processes to `ps`-view.
+- Prevent running processes to start twice when calling `start <name|all>` twice.
+
+
+# Author
 
 Christian Blaschke <mail@platdesign.de>
