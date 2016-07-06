@@ -44,8 +44,6 @@ vorpal
 
 
 
-
-
 function registerCMD(name) {
 	vorpal.use( require( path.join(__dirname, 'lib', 'vorpal-plugins', 'commands', name) ), { app: app });
 }
