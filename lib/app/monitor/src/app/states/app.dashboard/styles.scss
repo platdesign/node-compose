@@ -1,3 +1,41 @@
 .R4rmOwgT {
 	padding: 20px;
+
+	.table--images {
+		width: 100%;
+		margin-bottom: 20px;
+
+		td {
+			padding: .5em .7em;
+			background: $color-ci-haze;
+			vertical-align: top;
+		}
+
+		thead {
+			td {
+				background: $color-ci-haze-dark;
+
+				&:first-child {
+					border-radius: $border-radius 0 0 0;
+				}
+				&:last-child {
+					border-radius: 0 $border-radius 0 0;
+				}
+
+			}
+			font-weight: 700;
+		}
+
+		tbody {
+			td:first-child {
+				width: 40px;
+			}
+			td:last-child {
+				width: 40px;
+				white-space: nowrap;
+			}
+		}
+
+
+	}
 }

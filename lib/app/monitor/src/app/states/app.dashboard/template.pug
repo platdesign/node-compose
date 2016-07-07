@@ -1,17 +1,20 @@
 .R4rmOwgT
 	h1 Images
-	table
+
+	table.table--images
 		thead
 			tr
 				td No
 				td Name
 				td Status
+				td Controls
 
 		tbody
 			tr(ng-repeat="image in images", ui-sref="^.images.image({ imageId: image.id })")
 				td {{ $index + 1 }}
 				td {{ image.id }}
-				td {{ image.status }}
+				td: image-status(image="image")
+				td: image-controls(image="image")
 
 	h1 Logs
 	log-monitor(logs="data.logs")
