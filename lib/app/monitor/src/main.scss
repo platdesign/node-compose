@@ -1,0 +1,77 @@
+
+@import 'normalize-scss/sass/_normalize';
+@include normalize();
+
+html {
+	height: 100%;
+}
+body {
+	font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	line-height: 1.4;
+	overflow-x: hidden;
+	height: 100%;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin: 0;
+	font-weight: 400;
+	padding:0;
+}
+
+nav li a {
+	display: block;
+}
+
+a {
+	cursor: pointer;
+	color: inherit;
+	text-decoration: none;
+}
+
+// limit images to max-width: 100% of parent container
+img {
+	max-width: 100%;
+	display: block;
+}
+
+
+/* Angular reset */
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak],
+.ng-cloak, .x-ng-cloak,
+.ng-hide:not(.ng-hide-animate) {
+  display: none !important;
+}
+
+ng\:form {
+  display: block;
+}
+
+[ng-click], [ui-sref] {
+	cursor: pointer;
+}
+
+a, [ng-click], [ui-sref] {
+	user-select: none;
+}
+
+
+
+/* Font-Awesome reset */
+.fa {
+	vertical-align: baseline;
+}
+.fa + span {
+	margin-left: .4em;
+	vertical-align: baseline;
+}
+
+
+@import 'font-awesome/scss/font-awesome';
+
+
+@import './app/styles';

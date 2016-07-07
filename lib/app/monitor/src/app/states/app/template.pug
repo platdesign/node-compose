@@ -1,0 +1,32 @@
+.RCgWH2Vt
+	header
+		nav.left
+			li
+				button.btn--default(ui-sref=".dashboard")
+					.fa.fa-tachometer
+					span Dashboard
+			li
+				button.btn--default(ui-sref=".images")
+					.fa.fa-sitemap
+					span Images
+
+		nav.right
+			li
+				button.btn--default(ng-click="$cmd.exec('reload')")
+					.fa.fa-refresh
+					span Reload
+			li
+				button.btn--default(ng-click="$cmd.exec('stop', { image: 'all'})")
+					.fa.fa-stop
+					span Stop all
+			li
+				button.btn--default(ng-click="$cmd.exec('start', { image: 'all'})")
+					.fa.fa-play
+					span Start all
+
+
+	main.ui-view
+	footer
+		span Build with&nbsp;&nbsp;
+		span.fa.fa-heart
+		span by <a href="http://platdesign.de">platdesign</a>

@@ -1,0 +1,26 @@
+
+
+$color-ci: darken(orange, 15%);
+$color-ci-dark: #333;
+
+@import './directives/log-monitor/styles';
+@import './states/styles';
+
+
+.btn--default {
+	border: none;
+	background: $color-ci;
+	font-weight: inherit;
+	outline: none;
+	cursor: pointer;
+	color: rgba(white, .5);
+	padding: .4em .9em;
+
+	&:hover {
+		color: rgba(white, .8);
+	}
+	&:active {
+		color: white;
+		box-shadow: inset 0 0 10px 0 rgba(black, .2);
+	}
+}

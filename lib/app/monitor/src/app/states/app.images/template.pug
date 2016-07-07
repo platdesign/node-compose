@@ -1,0 +1,8 @@
+.Qepcd21K
+	aside
+		li(ng-repeat="image in images", ui-sref=".image({ imageId: image.id })", ui-sref-active="active")
+			.title {{ image.id }}
+			.status {{ iamge.status }}
+
+
+	main.ui-view

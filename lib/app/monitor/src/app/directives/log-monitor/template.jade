@@ -1,0 +1,5 @@
+.d4Ijm7XD
+	.screen
+		.item(ng-repeat="log in logs")
+			span.tags [{{ (log.tags | logMonitorTags).join(', ') }}]
+			span.msg(ng-bind-html="log.data | ansi2html")

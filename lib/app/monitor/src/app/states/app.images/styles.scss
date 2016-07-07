@@ -1,0 +1,32 @@
+.Qepcd21K {
+	display: flex;
+	height: 100%;
+
+	> aside {
+		flex: 0 0 auto;
+		min-width: 250px;
+		background:lighten($color-ci-dark, 70%);
+		overflow-y: scroll;
+
+		li {
+			background:white;
+			margin: 1px 0;
+			list-style: none;
+			padding: 10px;
+			height: 50px;
+
+			&.active {
+				background: mix(white, $color-ci, 90%);
+			}
+
+			.title {
+				font-weight: 700;
+			}
+		}
+	}
+
+	> main {
+		flex: 1 1 auto;
+	}
+
+}

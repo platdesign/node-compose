@@ -1,0 +1,55 @@
+.RCgWH2Vt {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+
+	> header {
+		flex: 0 0 auto;
+		display: flex;
+		background: $color-ci-dark;
+		padding: 5px;
+
+		> nav {
+			display: flex;
+
+			li {
+				list-style: none;
+
+				&:not(:last-child) {
+					margin-right: .4em;
+				}
+
+				button {
+					font-size: 1.1em;
+					> span {
+						font-weight: 100;
+					}
+				}
+
+
+			}
+		}
+
+		nav.left {
+			flex: 1 1 auto;
+		}
+
+
+	}
+
+	> main {
+		flex: 1 1 auto;
+		overflow: auto;
+		overflow-x: hidden;
+		height: 100%;
+	}
+
+	> footer {
+		flex: 0 0 auto;
+		background: $color-ci-dark;
+		color: lighten($color-ci-dark, 25%);
+		padding: 10px;
+		font-size: .8em;
+		text-align: center;
+	}
+}

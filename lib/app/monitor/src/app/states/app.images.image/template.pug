@@ -1,0 +1,26 @@
+.UyjZzIBR(ng-if="image")
+	header
+		.details
+			h1.title {{ image.id }}
+			table.table--config
+				tbody
+					tr
+						td Path
+						td {{ image.absPath }}
+					tr
+						td Env
+						td
+							.env(ng-repeat="env in image.config.environment")
+								span {{ env }}
+
+		.controls
+			button.restart(ng-click="$cmd.exec('restart', { image: image.id })")
+				.fa.fa-refresh
+			button.start(ng-click="$cmd.exec('start', { image: image.id })")
+				.fa.fa-play
+			button.stop(ng-click="$cmd.exec('stop', { image: image.id })")
+				.fa.fa-stop
+
+
+	section.logs
+		log-monitor(tags="['#image', image.id]")
