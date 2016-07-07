@@ -2,6 +2,10 @@
 
 Start node-processes as with docker-compose.
 
+# Important
+
+**`node-compose` for development only! Don't use it in production!**
+
 
 # Prerequisite
 
@@ -93,7 +97,6 @@ Commands:
 - Use nodemon as a module to avoid global dep.
 - Add more information about running processes to `ps`-view.
 - Prevent running processes to start twice when calling `start <name|all>` twice.
-
 
 # Author
 
