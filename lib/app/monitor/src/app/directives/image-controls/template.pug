@@ -1,0 +1,7 @@
+.Ns5DbCka
+	button.btn--default(ng-click="$event.stopPropagation(); $root.$cmd.exec('restart', { image: image.id })", ng-if="image.isRunning")
+		.fa.fa-refresh
+	button.btn--default(ng-click="$event.stopPropagation(); $root.$cmd.exec('start', { image: image.id })", ng-if="!image.isRunning")
+		.fa.fa-play
+	button.btn--default(ng-click="$event.stopPropagation(); $root.$cmd.exec('stop', { image: image.id })", ng-if="image.isRunning")
+		.fa.fa-stop

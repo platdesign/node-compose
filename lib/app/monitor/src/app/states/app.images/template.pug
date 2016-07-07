@@ -1,8 +1,18 @@
 .Qepcd21K
-	aside
+	aside(ng-if="showAside")
 		li(ng-repeat="image in images", ui-sref=".image({ imageId: image.id })", ui-sref-active="active")
 			.title {{ image.id }}
-			.status {{ iamge.status }}
+			.status
+				image-status(image="image")
 
 
 	main.ui-view
+		.image-list
+			li(ng-repeat="image in images", ui-sref=".image({ imageId: image.id })", ui-sref-active="active")
+				.title
+					image-status(image="image")
+					span {{ image.id }}
+				.details {{ image.absPath }}
+				.controls
+					image-controls(image="image")
+

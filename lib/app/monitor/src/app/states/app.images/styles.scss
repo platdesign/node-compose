@@ -1,12 +1,14 @@
 .Qepcd21K {
 	display: flex;
 	height: 100%;
+	width: 100%;
 
 	> aside {
 		flex: 0 0 auto;
 		min-width: 250px;
-		background:lighten($color-ci-dark, 70%);
-		overflow-y: scroll;
+		background: $color-ci-haze-dark;
+		overflow-y: auto;
+		box-shadow: 3px 0 5px -3px darken($color-ci-haze-dark, 5%);
 
 		li {
 			background:white;
@@ -14,19 +16,53 @@
 			list-style: none;
 			padding: 10px;
 			height: 50px;
+			background: $color-ci-haze;
+			position: relative;
 
 			&.active {
-				background: mix(white, $color-ci, 90%);
+				background: white;
 			}
 
 			.title {
 				font-weight: 700;
+			}
+
+			.status {
+				position: absolute;
+				right: 10px;
+				top: 10px;
 			}
 		}
 	}
 
 	> main {
 		flex: 1 1 auto;
+		min-width: 1px;
+		padding: 5px;
+
+		.image-list {
+			padding: 20px;
+
+			li {
+				list-style: none;
+				background: $color-ci-haze;
+				margin: 0 0 10px 0;
+				padding: 10px;
+				border-radius: $border-radius;
+				box-shadow: 0 0 2px 0 rgba($color-ci-dark, .4);
+				position: relative;
+
+				.title {
+					font-size: 1.5em;
+				}
+
+				.controls {
+					position: absolute;
+					right: 10px;
+					top: 10px;
+				}
+			}
+		}
 	}
 
 }

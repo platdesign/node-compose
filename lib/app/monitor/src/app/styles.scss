@@ -1,9 +1,19 @@
 
 
 $color-ci: darken(orange, 15%);
-$color-ci-dark: #333;
+$color-ci-dark: mix($color-ci, #333, 5%);
+$color-ci-haze: lighten($color-ci-dark, 73%);
+$color-ci-haze-dark: darken($color-ci-haze, 10%);
+$color-on: saturate(mix(green, skyblue), 30%);
+$color-off: lighten(desaturate(darken(red, 10%), 60%), 30%);
+
+
+$border-radius: 3px;
 
 @import './directives/log-monitor/styles';
+@import './directives/image-status/styles';
+@import './directives/image-controls/styles';
+
 @import './states/styles';
 
 
@@ -15,6 +25,7 @@ $color-ci-dark: #333;
 	cursor: pointer;
 	color: rgba(white, .5);
 	padding: .4em .9em;
+	border-radius: $border-radius;
 
 	&:hover {
 		color: rgba(white, .8);
