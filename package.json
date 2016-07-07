@@ -10,11 +10,14 @@
   "dependencies": {
     "cli-table": "^0.3.1",
     "colors": "^1.1.2",
+    "hapi": "^13.5.0",
+    "inert": "^4.0.1",
     "is": "^3.1.0",
     "js-yaml": "^3.6.1",
     "nodemon": "^1.9.2",
     "ps-tree": "^1.1.0",
     "rx": "^4.1.0",
+    "socket.io": "^1.4.8",
     "vorpal": "^1.11.2",
     "which": "^1.2.10"
   },

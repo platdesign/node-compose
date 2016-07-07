@@ -29,7 +29,8 @@ app.registerLogger( vorpal.log.bind(vorpal) );
 		'stop',
 		'restart',
 		'images',
-		'exit'
+		'exit',
+		'monitor'
 	].forEach( registerCMD )
 
 
