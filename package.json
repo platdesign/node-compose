@@ -10,6 +10,7 @@
   "dependencies": {
     "cli-table": "^0.3.1",
     "colors": "^1.1.2",
+    "extend": "^3.0.0",
     "hapi": "^13.5.0",
     "inert": "^4.0.1",
     "is": "^3.1.0",
