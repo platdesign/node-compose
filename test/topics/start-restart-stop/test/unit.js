@@ -79,7 +79,7 @@ module.exports = function(App) {
 
 
 
-	describe('Start - Restart - Stop with single service', () => {
+	describe('Start - Restart - Stop with single image', () => {
 
 		let app;
 
