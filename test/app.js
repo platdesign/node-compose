@@ -10,8 +10,8 @@ const App = require('../lib/app');
 describe('Unit', () => {
 	describe('App', () => {
 
-		require('./projects/start-command/test/unit')(App);
-		require('./projects/environment-vars/test/unit')(App);
+		require('./topics/start-command/test/unit')(App);
+		require('./topics/environment-vars/test/unit')(App);
 
 	});
 });
