@@ -4,7 +4,7 @@ Start node-processes as with docker-compose.
 
 # Important
 
-**`node-compose` for development only! Don't use it in production!**
+**`node-compose` is for development only! Don't use it in production!**
 
 
 # Prerequisite
