@@ -5,18 +5,15 @@ const path = require('path');
 const App = require('./lib/app');
 const Vorpal = require('vorpal');
 
+// Init vorpal instance
+const vorpal = Vorpal();
+
 // Init App
 const app = App({
 	CWD: process.cwd(),
 	configFile: process.argv[2],
+	logger: vorpal.log.bind(vorpal)
 });
-
-// Init vorpal instance
-const vorpal = Vorpal();
-
-
-// Register vorpal-logger on app
-app.registerLogger( vorpal.log.bind(vorpal) );
 
 
 // RegisterVorpal-Plugins
