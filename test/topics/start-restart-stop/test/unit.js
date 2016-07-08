@@ -23,7 +23,7 @@ module.exports = function(App) {
 			let logs = [];
 
 			let stopStateListener = app.on('image:state', (e) => {
-				logs.push(e._image._name +':'+ e._image.state);
+				logs.push(e._image._name + ':' + e._image.state);
 			});
 
 			return app.commands.start({
@@ -55,7 +55,7 @@ module.exports = function(App) {
 			let logs = [];
 
 			let stopStateListener = app.on('image:state', (e) => {
-				logs.push(e._image._name +':'+ e._image.state);
+				logs.push(e._image._name + ':' + e._image.state);
 			});
 
 			return app.commands.restart({
@@ -92,7 +92,7 @@ module.exports = function(App) {
 			let logs = [];
 
 			let stopStateListener = app.on('image:state', (e) => {
-				logs.push(e._image._name +':'+ e._image.state);
+				logs.push(e._image._name + ':' + e._image.state);
 			});
 
 			return app.commands.stop({
