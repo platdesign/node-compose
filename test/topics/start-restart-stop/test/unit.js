@@ -20,12 +20,6 @@ module.exports = function(App) {
 
 		it('should start all', () => {
 
-			let logs = [];
-
-			let stopStateListener = app.on('image:state', (e) => {
-				logs.push(e._image._name + ':' + e._image.state);
-			});
-
 			return app.commands.start({
 					image: 'all'
 				})
@@ -37,26 +31,13 @@ module.exports = function(App) {
 						});
 
 					expect(allRunning).to.equal(true);
-					expect(logs).to.equal([
-						'serviceA:starting',
-						'serviceA:running',
-						'serviceB:starting',
-						'serviceB:running'
-					]);
 
-					stopStateListener();
 				});
 
 		});
 
 
 		it('should restart all', () => {
-
-			let logs = [];
-
-			let stopStateListener = app.on('image:state', (e) => {
-				logs.push(e._image._name + ':' + e._image.state);
-			});
 
 			return app.commands.restart({
 					image: 'all'
@@ -70,30 +51,12 @@ module.exports = function(App) {
 
 					expect(allRunning).to.equal(true);
 
-					expect(logs).to.equal([
-						'serviceA:stopping',
-						'serviceB:stopping',
-						'serviceA:idle',
-						'serviceA:starting',
-						'serviceA:running',
-						'serviceB:idle',
-						'serviceB:starting',
-						'serviceB:running'
-					]);
-
-					stopStateListener();
 				});
 
 		});
 
 
 		it('should stop all', () => {
-
-			let logs = [];
-
-			let stopStateListener = app.on('image:state', (e) => {
-				logs.push(e._image._name + ':' + e._image.state);
-			});
 
 			return app.commands.stop({
 					image: 'all'
@@ -106,11 +69,99 @@ module.exports = function(App) {
 						});
 
 					expect(allIdle).to.equal(true);
+
+				});
+
+		});
+
+	});
+
+
+
+
+	describe('Start - Restart - Stop with single service', () => {
+
+		let app;
+
+		before(() => {
+			app = new App({
+				CWD: path.join(__dirname, '..'),
+				logger: function() {}
+			});
+		});
+
+		it('should start serviceA', () => {
+
+			let logs = [];
+
+			let stopStateListener = app.on('image:state', (e) => {
+				logs.push(e._image._name + ':' + e._image.state);
+			});
+
+			return app.commands.start({
+					image: 'serviceA'
+				})
+				.then(() => {
+
+					expect( app.getImageByName('serviceA').state ).to.equal('running');
+
+					expect(logs).to.equal([
+						'serviceA:starting',
+						'serviceA:running'
+					]);
+
+					stopStateListener();
+				});
+
+		});
+
+
+		it('should restart serviceA', () => {
+
+			let logs = [];
+
+			let stopStateListener = app.on('image:state', (e) => {
+				logs.push(e._image._name + ':' + e._image.state);
+			});
+
+			return app.commands.restart({
+					image: 'serviceA'
+				})
+				.then(() => {
+
+					expect( app.getImageByName('serviceA').state ).to.equal('running');
+
 					expect(logs).to.equal([
 						'serviceA:stopping',
-						'serviceB:stopping',
 						'serviceA:idle',
-						'serviceB:idle'
+						'serviceA:starting',
+						'serviceA:running'
+					]);
+
+					stopStateListener();
+				});
+
+		});
+
+
+		it('should stop serviceA', () => {
+
+			let logs = [];
+
+			let stopStateListener = app.on('image:state', (e) => {
+				logs.push(e._image._name + ':' + e._image.state);
+			});
+
+			return app.commands.stop({
+					image: 'serviceA'
+				})
+				.then(() => {
+
+					expect( app.getImageByName('serviceA').state ).to.equal('idle');
+
+					expect(logs).to.equal([
+						'serviceA:stopping',
+						'serviceA:idle',
 					]);
 
 					stopStateListener();
@@ -119,6 +170,4 @@ module.exports = function(App) {
 		});
 
 	});
-
-
 };
