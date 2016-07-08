@@ -1,8 +1,12 @@
 
 
-$color-ci: darken(orange, 15%);
+$color-ci: darken(skyblue, 35%);
+//$color-ci: darken(mix(green, skyblue, 65%), 10%);
+
 $color-ci-dark: mix($color-ci, #333, 5%);
-$color-ci-haze: lighten($color-ci-dark, 73%);
+$color-ci-font: lighten($color-ci-dark, 25%);
+$color-ci-haze: lighten($color-ci-dark, 70%);
+$color-ci-haze-light: lighten($color-ci-haze, 6%);
 $color-ci-haze-dark: darken($color-ci-haze, 10%);
 $color-on: saturate(mix(green, skyblue), 30%);
 $color-off: lighten(desaturate(darken(red, 10%), 60%), 30%);
@@ -23,7 +27,7 @@ $border-radius: 3px;
 	font-weight: inherit;
 	outline: none;
 	cursor: pointer;
-	color: rgba(white, .5);
+	color: rgba(white, .7);
 	padding: .4em .9em;
 	border-radius: $border-radius;
 

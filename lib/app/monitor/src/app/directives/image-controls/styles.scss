@@ -1,4 +1,11 @@
 .Ns5DbCka {
+	button {
+		font-weight: 100;
+		span {
+			letter-spacing: .05em;
+		}
+	}
+
 	button + button {
 		margin-left: .5em;
 	}

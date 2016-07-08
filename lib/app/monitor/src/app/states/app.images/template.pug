@@ -4,7 +4,8 @@
 			.title {{ image.id }}
 			.status
 				image-status(image="image")
-
+				.state {{ image.state }}
+			.version {{ image.pkg.version }}
 
 	main.ui-view
 		.image-list

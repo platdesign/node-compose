@@ -3,15 +3,23 @@
 		.details
 			h1.title
 				image-status(image="image")
-				span {{ image.id }}
+				span.id {{ image.id }}
+				span.pkg-name(ng-if="image.pkg.name") /{{ image.pkg.name }}
+
+			p.description {{ image.pkg.description }}
+
+			.version {{ image.pkg.version }}
 
 			table.table--config
 				tbody
 					tr
-						td Path
+						td CWD
 						td {{ image.absPath }}
 					tr
-						td Env
+						td Start
+						td {{ image.commands.start }}
+					tr
+						td Export
 						td
 							.env(ng-repeat="env in image.config.environment")
 								span {{ env }}

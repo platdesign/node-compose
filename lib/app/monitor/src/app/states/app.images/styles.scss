@@ -9,6 +9,7 @@
 		background: $color-ci-haze-dark;
 		overflow-y: auto;
 		box-shadow: 3px 0 5px -3px darken($color-ci-haze-dark, 5%);
+		padding-top: 14px;
 
 		li {
 			background:white;
@@ -18,9 +19,10 @@
 			height: 50px;
 			background: $color-ci-haze;
 			position: relative;
+			transition: all .3s;
 
 			&.active {
-				background: white;
+				background: $color-ci-haze-light;
 			}
 
 			.title {
@@ -31,6 +33,10 @@
 				position: absolute;
 				right: 10px;
 				top: 10px;
+				text-align: right;
+				> .state {
+					font-size: .9em;
+				}
 			}
 		}
 	}
