@@ -14,7 +14,7 @@ module.exports = function(App) {
 		before(() => {
 			app = new App({
 				CWD: path.join(__dirname, '..'),
-				logger: function(){}
+				logger: function() {}
 			});
 		});
 
@@ -25,7 +25,7 @@ module.exports = function(App) {
 
 				expect(image.config.commands.start)
 					.to.be.a.string()
-					.and.equal( 'node server.js' );
+					.and.equal('node server.js');
 			});
 
 		});
@@ -46,7 +46,6 @@ module.exports = function(App) {
 
 
 
-
 		describe('service-c (found index.js)', () => {
 
 			it('should have start command: node .', () => {
@@ -54,7 +53,7 @@ module.exports = function(App) {
 
 				expect(image.config.commands.start)
 					.to.be.a.string()
-					.and.equal( 'node .' );
+					.and.equal('node .');
 			});
 
 		});
@@ -67,7 +66,7 @@ module.exports = function(App) {
 
 				expect(image.config.commands.start)
 					.to.be.a.string()
-					.and.equal( 'node run.js' );
+					.and.equal('node run.js');
 			});
 
 		});

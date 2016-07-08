@@ -1,0 +1,8 @@
+serviceA:
+  build: ./service-a
+  environment:
+    - NODE_ENV=production
+    - PORT=9001
+
+serviceB:
+  build: ./service-b
