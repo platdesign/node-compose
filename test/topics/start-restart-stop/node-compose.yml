@@ -1,0 +1,5 @@
+serviceA:
+  build: ./service-a
+
+serviceB:
+  build: ./service-b
