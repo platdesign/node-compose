@@ -1,0 +1,16 @@
+serviceA:
+  build: ./service-a
+  command: node server.js
+  environment:
+    - NODE_ENV=production
+
+serviceB:
+  build: ./service-b
+
+
+serviceC:
+  build: ./service-c
+
+
+serviceD:
+  build: ./service-d
