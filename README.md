@@ -96,7 +96,18 @@ Commands:
 
 - Use nodemon as a module to avoid global dep.
 - Add more information about running processes to `ps`-view.
-- Prevent running processes to start twice when calling `start <name|all>` twice.
+
+
+
+# Tests
+
+Tests are written with [mocha](https://mochajs.org/).
+
+1. Clone repo `git clone https://github.com/platdesign/node-compose.git`
+2. Move to repo directory. `cd node-compose`
+3. Install all dependencies. `npm install`
+4. Run tests with `mocha`
+
 
 # Author
 
