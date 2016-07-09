@@ -80,15 +80,15 @@ Start node-compose shell with `node-compose`. Inside the shell start all process
 
 ```bash
 Commands:
-	help [command...]            Provides help for a given command.
-	exit                         Closing shell and stop all images
-	ps                           List running images
-	reload                       Reloads config file and restarts processes if needed.
-	start <image> [images...]    Start an image by <name> or all
-	stop <image> [images...]     Stop an image by <name> or all
-	restart <image> [images...]  Restart one or more images by given name or all
-	images                       List all images found in config file.
-	monitor                      Start web monitor
+    help [command...]            Provides help for a given command.
+    exit                         Closing shell and stop all images
+    ps                           List running images
+    reload                       Reloads config file and restarts processes if needed.
+    start <image> [images...]    Start an image by <name> or all
+    stop <image> [images...]     Stop an image by <name> or all
+    restart <image> [images...]  Restart one or more images by given name or all
+    images                       List all images found in config file.
+    monitor [options]            Start web monitor
 ```
 
 
