@@ -4,9 +4,15 @@
 const path = require('path');
 const App = require('./lib/app');
 const Vorpal = require('vorpal');
+const updateNotifier = require('update-notifier');
+const pkg = require('./package.json');
+
 
 // Init vorpal instance
 const vorpal = Vorpal();
+
+// Notify about module updates
+updateNotifier({ pkg: pkg, updateCheckInterval: 0 }).notify({ defer: false });
 
 // Init App
 const app = App({
