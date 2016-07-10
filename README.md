@@ -2,6 +2,8 @@
 
 Start node-processes as with docker-compose.
 
+[![Build Status](https://img.shields.io/travis/platdesign/node-compose.svg)](https://travis-ci.org/platdesign/node-compose)
+
 # Important
 
 **`node-compose` is for development only! Don't use it in production!**
