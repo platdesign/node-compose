@@ -32,6 +32,9 @@
   "bin": {
     "node-compose": "bin/bn.js"
   },
+  "scripts": {
+    "test": "mocha"
+  },
   "keywords": [
     "microservices",
     "multiprocess",
