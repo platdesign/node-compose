@@ -8,13 +8,13 @@ Start node-processes as with docker-compose.
 
 
 	
-![](https://nodei.co/npm/node-compose.png?downloads=true&downloadRank=true&stars=true)	
+![](https://nodei.co/npm/node-compose.png?downloads=true&downloadRank=true&stars=true)
+[![Package Quality](http://npm.packagequality.com/badge/node-compose.png)](http://packagequality.com/#?package=node-compose)  
 [Detailed npm trends and stats](http://npm-stat.com/charts.html?package=node-compose)
 
 
 
 [![Build Status](https://img.shields.io/travis/platdesign/node-compose.svg)](https://travis-ci.org/platdesign/node-compose) 
-[![Package Quality](http://npm.packagequality.com/badge/node-compose.png)](http://packagequality.com/#?package=node-compose)
 
 
 
