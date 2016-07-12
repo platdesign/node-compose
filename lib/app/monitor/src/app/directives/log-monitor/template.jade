@@ -1,7 +1,18 @@
 .d4Ijm7XD
 	header
-		select(ng-model="$storage.logMonitor.limit", ng-options="item as item for item in [10, 50, 100]")
+		.col
+			label
+				span Limit
+				select(ng-model="$storage.logMonitor.limit", ng-options="item as item for item in [10, 50, 100]")
+		.col
+			label
+				input(
+					ng-model="$storage.logMonitor.verbose",
+					type="checkbox"
+				)
+				span Verbose
 	.screen
-		.item(ng-repeat="log in logs | limitTo:$storage.logMonitor.limit:0 - $storage.logMonitor.limit")
+		.item(
+			ng-repeat="log in logs | logMonitorFilterVerbose:$storage.logMonitor.verbose | limitTo:$storage.logMonitor.limit:0 - $storage.logMonitor.limit")
 			span.tags [{{ (log.tags | logMonitorTags).join(', ') }}]
 			span.msg(ng-bind-html="log.data | ansi2html")

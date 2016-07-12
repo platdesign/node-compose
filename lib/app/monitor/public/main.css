@@ -2652,18 +2652,63 @@ a, [ng-click], [ui-sref] {
     left: 0;
     width: 100%;
     bottom: 0;
-    padding: 5px;
     transition: all .3s;
-    opacity: 0;
     background: #1b7ca4;
-    border-radius: 0 0 3px 3px; }
+    border-radius: 0 0 3px 3px;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    color: rgba(255, 255, 255, 0.7);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale; }
+    .d4Ijm7XD > header > .col:not(:last-child) {
+      border-right: 1px solid rgba(50, 55, 57, 0.2); }
+    .d4Ijm7XD > header select {
+      border: none;
+      -webkit-appearance: none;
+         -moz-appearance: none;
+              appearance: none;
+      background: transparent;
+      padding: 0;
+      outline: none;
+      color: inherit;
+      font-size: inherit;
+      font-weight: inherit;
+      vertical-align: middle;
+      display: inline; }
+    .d4Ijm7XD > header label {
+      padding: 7px 10px;
+      display: block; }
+    .d4Ijm7XD > header input[type="checkbox"] {
+      -webkit-appearance: none;
+         -moz-appearance: none;
+              appearance: none;
+      border: 1px solid rgba(255, 255, 255, 0.7);
+      width: 1.05em;
+      height: 1.05em;
+      vertical-align: middle;
+      position: relative;
+      outline: none; }
+      .d4Ijm7XD > header input[type="checkbox"]:checked:after {
+        content: '';
+        position: absolute;
+        top: 1px;
+        left: 1px;
+        bottom: 1px;
+        right: 1px;
+        background: rgba(255, 255, 255, 0.7); }
+    .d4Ijm7XD > header span {
+      display: inline-block;
+      vertical-align: middle; }
+    .d4Ijm7XD > header input + span {
+      margin-left: .5em; }
+    .d4Ijm7XD > header span + select {
+      margin-left: .5em;
+      vertical-align: middle; }
   .d4Ijm7XD:hover {
     border-radius: 3px 3px 0 0; }
     .d4Ijm7XD:hover > header {
-      opacity: 1;
-      -webkit-transform: translateY(100%);
-          -ms-transform: translateY(100%);
-              transform: translateY(100%); }
+      opacity: 1; }
   .d4Ijm7XD .screen {
     color: #eee;
     -webkit-font-smoothing: antialiased;
