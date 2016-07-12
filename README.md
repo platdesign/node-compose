@@ -8,7 +8,8 @@ Start node-processes as with docker-compose and with a neat little ui.
 
 [![Build Status](https://img.shields.io/travis/platdesign/node-compose.svg)](https://travis-ci.org/platdesign/node-compose) 
 [![Package Quality](http://npm.packagequality.com/shield/node-compose.svg)](http://packagequality.com/#?package=node-compose)
-	
+[![Gitter](https://badges.gitter.im/platdesign/node-compose.svg)](https://gitter.im/platdesign/node-compose?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)	
+
 [![](https://nodei.co/npm/node-compose.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/node-compose)  
 [Detailed npm trends and stats](http://npm-stat.com/charts.html?package=node-compose)
 
