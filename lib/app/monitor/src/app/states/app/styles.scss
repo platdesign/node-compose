@@ -6,9 +6,14 @@
 
 	> header {
 		flex: 0 0 auto;
+		justify-content: space-between;
+		align-items: center;
+
 		display: flex;
 		background: $color-ci-dark;
 		padding: 5px;
+
+
 
 		> nav {
 			display: flex;
@@ -27,14 +32,23 @@
 					}
 				}
 
-
 			}
 		}
 
-		nav.left {
-			flex: 1 1 auto;
+		.title {
+			font-size: 1.7em;
+			white-space: nowrap;
+			> .fat {
+				font-weight: 700;
+				color: darken($color-ci-font, 12%);
+			}
+			> .thin {
+				font-weight: 100;
+				color: lighten($color-ci-font, 5%);
+				-webkit-font-smoothing: antialiased;
+				-moz-osx-font-smoothing: grayscale;
+			}
 		}
-
 
 	}
 

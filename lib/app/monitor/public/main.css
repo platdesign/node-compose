@@ -2653,6 +2653,7 @@ a, [ng-click], [ui-sref] {
     width: 100%;
     bottom: 0;
     transition: all .3s;
+    opacity: 0;
     background: #1b7ca4;
     border-radius: 0 0 3px 3px;
     display: -webkit-flex;
@@ -2708,7 +2709,10 @@ a, [ng-click], [ui-sref] {
   .d4Ijm7XD:hover {
     border-radius: 3px 3px 0 0; }
     .d4Ijm7XD:hover > header {
-      opacity: 1; }
+      opacity: 1;
+      -webkit-transform: translateY(100%);
+          -ms-transform: translateY(100%);
+              transform: translateY(100%); }
   .d4Ijm7XD .screen {
     color: #eee;
     -webkit-font-smoothing: antialiased;
@@ -2756,6 +2760,12 @@ a, [ng-click], [ui-sref] {
     -webkit-flex: 0 0 auto;
         -ms-flex: 0 0 auto;
             flex: 0 0 auto;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
@@ -2773,10 +2783,17 @@ a, [ng-click], [ui-sref] {
           font-size: 1.1em; }
           .RCgWH2Vt > header > nav li button > span {
             font-weight: 100; }
-    .RCgWH2Vt > header nav.left {
-      -webkit-flex: 1 1 auto;
-          -ms-flex: 1 1 auto;
-              flex: 1 1 auto; }
+    .RCgWH2Vt > header .title {
+      font-size: 1.7em;
+      white-space: nowrap; }
+      .RCgWH2Vt > header .title > .fat {
+        font-weight: 700;
+        color: #51595c; }
+      .RCgWH2Vt > header .title > .thin {
+        font-weight: 100;
+        color: #7a868a;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale; }
   .RCgWH2Vt > main {
     -webkit-flex: 1 1 auto;
         -ms-flex: 1 1 auto;
@@ -2916,12 +2933,17 @@ a, [ng-click], [ui-sref] {
         -ms-flex: 0 0 auto;
             flex: 0 0 auto;
     background: #e6e9ea;
-    min-width: 250px;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    padding: 5px;
-    border-radius: 3px; }
+    border-radius: 3px;
+    min-width: 100px; }
+    .UyjZzIBR > header .controls .Ns5DbCka {
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-flex-direction: column;
+          -ms-flex-direction: column;
+              flex-direction: column; }
+      .UyjZzIBR > header .controls .Ns5DbCka > * {
+        margin: 5px 5px 0 5px; }
 
 .UyjZzIBR > section.logs {
   margin: 10px; }

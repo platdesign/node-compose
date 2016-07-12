@@ -53,11 +53,16 @@
 		.controls {
 			flex: 0 0 auto;
 			background: $color-ci-haze;
-			min-width: 250px;
-			display: flex;
-			padding: 5px;
 			border-radius: $border-radius;
+			min-width: 100px;
 
+			.Ns5DbCka {
+				display: flex;
+				flex-direction: column;
+				> * {
+					margin: 5px 5px 0 5px;
+				}
+			}
 		}
 	}
 

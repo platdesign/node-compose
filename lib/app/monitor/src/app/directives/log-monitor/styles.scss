@@ -10,7 +10,7 @@
 		width: 100%;
 		bottom: 0;
 		transition: all .3s;
-		//opacity: 0;
+		opacity: 0;
 		background:$color-ci;
 		border-radius: 0 0 $border-radius $border-radius;
 		display: flex;
@@ -20,7 +20,6 @@
     -moz-osx-font-smoothing: grayscale;
 
 		> .col {
-			//padding: 5px 10px;
 			&:not(:last-child) {
 				border-right: 1px solid rgba($color-ci-dark, .2);
 			}
@@ -87,7 +86,7 @@
 		border-radius: $border-radius $border-radius 0 0;
 		> header {
 			opacity: 1;
-			//transform: translateY(100%);
+			transform: translateY(100%);
 		}
 	}
 
