@@ -1,6 +1,8 @@
 #node-compose
 
-Start node-processes as with docker-compose.
+Start node-processes as with docker-compose and with a neat little ui.
+
+![Monitor preview](./images/monitor.jpg)
 
 
 
