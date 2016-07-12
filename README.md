@@ -1,5 +1,7 @@
 #node-compose
 
+[![Join the chat at https://gitter.im/platdesign/node-compose](https://badges.gitter.im/platdesign/node-compose.svg)](https://gitter.im/platdesign/node-compose?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 Start node-processes as with docker-compose and with a neat little ui.
 
 
