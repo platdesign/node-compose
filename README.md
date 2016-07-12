@@ -2,8 +2,6 @@
 
 Start node-processes as with docker-compose and with a neat little ui.
 
-![Monitor preview](./images/monitor.jpg)
-
 
 
 
@@ -14,8 +12,9 @@ Start node-processes as with docker-compose and with a neat little ui.
 [![](https://nodei.co/npm/node-compose.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/node-compose)  
 [Detailed npm trends and stats](http://npm-stat.com/charts.html?package=node-compose)
 
+----
 
-
+![Monitor preview](./images/monitor.jpg)
 
 
 
