@@ -1,0 +1,2 @@
+serviceA:
+  build: ./service-a
