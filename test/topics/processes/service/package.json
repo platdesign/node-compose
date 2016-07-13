@@ -1,0 +1,6 @@
+{
+	"scripts":{
+		"long":"tail -f index.js",
+		"short":"ls -als"
+	}
+}

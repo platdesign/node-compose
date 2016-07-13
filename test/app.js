@@ -14,6 +14,7 @@ describe('Unit', () => {
 		require('./topics/environment-vars/test/unit')(App);
 		require('./topics/start-restart-stop/test/unit')(App);
 		require('./topics/detect-execute-scripts/test/unit')(App);
+		require('./topics/processes/test/unit')(App);
 
 	});
 

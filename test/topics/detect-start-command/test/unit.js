@@ -11,11 +11,15 @@ module.exports = function(App) {
 
 		let app;
 
-		before(() => {
+		beforeEach(() => {
 			app = new App({
 				CWD: path.join(__dirname, '..'),
 				logger: function() {}
 			});
+		});
+
+		afterEach(() => {
+			app.close();
 		});
 
 		describe('service-a (with command attr)', () => {

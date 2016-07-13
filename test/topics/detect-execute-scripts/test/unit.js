@@ -18,6 +18,10 @@ module.exports = function(App) {
 			});
 		});
 
+		afterEach(() => {
+			app.close();
+		});
+
 		describe('service-a', () => {
 
 			it('should have method startScript', () => {
