@@ -1,5 +1,5 @@
 {
 	"scripts":{
-		"test":"ls -als"
+		"test":"node script.js"
 	}
 }

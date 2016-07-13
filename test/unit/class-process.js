@@ -5,11 +5,13 @@ const expect = code.expect;
 const path = require('path');
 const rx = require('rx');
 
-const Process = require('../lib/app/lib/process');
+
+const Process = require('../../lib/app/lib/process');
 
 
-describe('Unit', () => {
-	describe('Process Class', () => {
+module.exports = function() {
+
+	describe('Class: Process', () => {
 
 
 
@@ -573,7 +575,30 @@ describe('Unit', () => {
 
 
 
+		it('should log with expected tags on start()', () => {
+
+			let p = new Process('qwe', 'ls -als');
+
+			let res = p.logs
+			.take(2)
+			.do((e) => {
+
+				expect(e.tags)
+					.to.be.an.array()
+					.and.have.length(4)
+					.and.contain(['verbose', 'log', 'qwe', '#process']);
+
+			})
+			.toPromise()
+
+			p.start();
+
+			return res;
+
+		});
+
+
 
 	});
-});
 
+}

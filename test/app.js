@@ -16,5 +16,8 @@ describe('Unit', () => {
 		require('./topics/detect-execute-scripts/test/unit')(App);
 
 	});
+
+	require('./unit/class-process')();
+
 });
 
