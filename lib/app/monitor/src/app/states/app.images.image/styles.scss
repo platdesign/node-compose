@@ -54,14 +54,13 @@
 			flex: 0 0 auto;
 			background: $color-ci-haze;
 			border-radius: $border-radius;
-			min-width: 100px;
+			min-width: 150px;
 
-			.Ns5DbCka {
-				display: flex;
-				flex-direction: column;
-				> * {
-					margin: 5px 5px 0 5px;
-				}
+			hr {
+				margin: 0;
+				padding: 0;
+				border: none;
+				border-bottom: 1px solid $color-ci-haze-dark;
 			}
 		}
 	}

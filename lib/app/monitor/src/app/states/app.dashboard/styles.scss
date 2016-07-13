@@ -6,7 +6,8 @@
 		margin-bottom: 20px;
 
 		td {
-			padding: .5em .7em;
+			//padding: .5em .7em;
+			padding: 5px;
 			background: $color-ci-haze;
 			vertical-align: top;
 		}
@@ -26,16 +27,14 @@
 			font-weight: 700;
 		}
 
+
 		tbody {
-			td:first-child {
-				width: 40px;
-			}
-			td:last-child {
-				width: 40px;
-				white-space: nowrap;
+			td.script-controls,
+			td.controls {
+				padding:0;
+				width: 150px;
 			}
 		}
-
 
 	}
 }

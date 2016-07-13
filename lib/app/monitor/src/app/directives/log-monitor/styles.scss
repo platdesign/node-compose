@@ -1,16 +1,97 @@
 .d4Ijm7XD {
-	background: mix(black, $color-ci-dark);
 	position: relative;
-	border-radius: $border-radius;
-
 
 	> header {
-		position: absolute;
-		left:0;
-		width: 100%;
-		bottom: 0;
+		background: $color-ci;
+		//height: 30px;
+		border-radius: $border-radius $border-radius 0 0;
+		display: flex;
+		color: rgba(white, .7);
+		-webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+		overflow: hidden;
+		align-items: center;
+
+
+		.tabs {
+			display: flex;
+			.tab {
+				padding: 6px 12px;
+				&:not(:last-child) {
+					border-right: 1px solid $color-ci-light;
+				}
+				&:hover {
+					background: mix($color-ci, $color-ci-light, 80%);
+				}
+				&.active {
+					background: $color-ci-light;
+					color: rgba(white, .9);
+				}
+
+				.title {
+					font-weight: 700;
+				}
+
+				> * {
+					vertical-align: middle;
+				}
+			}
+		}
+	}
+
+	> .screen {
+
+		color: #eee;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		padding: 10px;
+		font-family: Courier;
+		font-size: .9em;
+		line-height: 1.3;
+		overflow: auto;
+		min-height: 400px;
+		max-height: 400px;
+		height: 400px;
+		background: mix(black, $color-ci-dark);
+
+		.item {
+			white-space: pre-wrap;
+			> .tags {
+				&:after { content: ' '; }
+			}
+
+			> .msg {
+
+			}
+
+
+			&.verbose {
+				.tags {
+					color: yellow;
+				}
+			}
+
+			&.log {
+				.tags {
+					color: green;
+				}
+			}
+
+			&.error {
+				.tags {
+					color: red;
+				}
+			}
+
+
+		}
+
+
+	}
+
+
+	> footer {
 		transition: all .3s;
-		opacity: 0;
 		background:$color-ci;
 		border-radius: 0 0 $border-radius $border-radius;
 		display: flex;
@@ -81,40 +162,5 @@
 
 	}
 
-	&:hover {
-
-		border-radius: $border-radius $border-radius 0 0;
-		> header {
-			opacity: 1;
-			transform: translateY(100%);
-		}
-	}
-
-	.screen {
-
-		color: #eee;
-		-webkit-font-smoothing: antialiased;
-		-moz-osx-font-smoothing: grayscale;
-		padding: 10px;
-		font-family: Courier;
-		font-size: .9em;
-		line-height: 1.3;
-		overflow: auto;
-		min-height: 400px;
-		max-height: 400px;
-		height: 400px;
-
-		.item {
-			white-space: pre-wrap;
-			> .tags {
-				&:after { content: ' '; }
-				color: green;
-			}
-
-			> .msg {
-
-			}
-		}
-	}
 
 }

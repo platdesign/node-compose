@@ -1,16 +1,28 @@
 .Ns5DbCka
+
+	button.btn--default(
+		ng-disabled="true",
+		ng-if="image.isStarting || image.isStopping"
+	)
+		.fa.fa-refresh.fa-spin
+		span {{ image.isStopping ? 'Stopping' : 'Starting' }}
+
 	button.btn--default(
 		ng-click="$event.stopPropagation(); $root.$cmd.exec('restart', { image: image.id })",
 		ng-if="image.isRunning"
 	)
 		.fa.fa-refresh
 		span Restart
+
+
 	button.btn--default(
 		ng-click="$event.stopPropagation(); $root.$cmd.exec('start', { image: image.id })",
 		ng-if="image.isIdle"
 	)
 		.fa.fa-play
 		span Start
+
+
 	button.btn--default(
 		ng-click="$event.stopPropagation(); $root.$cmd.exec('stop', { image: image.id })",
 		ng-if="image.isRunning"

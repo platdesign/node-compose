@@ -4,6 +4,7 @@ $color-ci: darken(skyblue, 35%);
 //$color-ci: darken(mix(green, skyblue, 65%), 10%);
 
 $color-ci-dark: mix($color-ci, #333, 5%);
+$color-ci-light: mix($color-ci, #fff, 85%);
 $color-ci-font: lighten($color-ci-dark, 25%);
 $color-ci-haze: lighten($color-ci-dark, 70%);
 $color-ci-haze-light: lighten($color-ci-haze, 6%);
@@ -17,6 +18,9 @@ $border-radius: 3px;
 @import './directives/log-monitor/styles';
 @import './directives/image-status/styles';
 @import './directives/image-controls/styles';
+@import './directives/image-script-controls/styles';
+
+@import './directives/script-button/styles';
 
 @import './states/styles';
 
@@ -28,8 +32,9 @@ $border-radius: 3px;
 	outline: none;
 	cursor: pointer;
 	color: rgba(white, .7);
-	padding: .4em .9em;
+	padding: .4em .9em .4em 2em;
 	border-radius: $border-radius;
+	position: relative;
 
 	&:hover {
 		color: rgba(white, .8);
@@ -37,5 +42,16 @@ $border-radius: 3px;
 	&:active {
 		color: white;
 		box-shadow: inset 0 0 10px 0 rgba(black, .2);
+	}
+
+	.fa {
+		left:.8em;
+		top: 50%;
+		transform: translateY(-50%);
+		position: absolute;
+	}
+
+	&:disabled {
+		background: $color-ci-haze-dark;
 	}
 }

@@ -1,4 +1,7 @@
 .Ns5DbCka {
+	display: flex;
+	padding: 5px;
+
 	button {
 		font-weight: 100;
 		span {
@@ -8,5 +11,15 @@
 
 	button + button {
 		margin-left: .5em;
+	}
+
+	&[rows] {
+		flex-direction: column;
+		button {
+			margin: 0;
+			& + button {
+				margin-top: 5px;
+			}
+		}
 	}
 }
