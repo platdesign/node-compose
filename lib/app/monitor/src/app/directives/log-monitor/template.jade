@@ -1,5 +1,33 @@
 .d4Ijm7XD
+
 	header
+
+		.tabs
+			.tab(
+				ng-class="{active: !currentTab }",
+				ng-click="currentTab = null; selectTab({ filter: {} })"
+			)
+				span.title {{ config.title || 'Logs' }}
+
+			.tab(
+				ng-repeat="tab in config.tabs",
+				ng-click="$parent.currentTab = tab.title; selectTab(tab)",
+				ng-class="{active: currentTab === tab.title }"
+			)
+				.fa(class="{{ tab.icon }}", ng-if="tab.icon")
+				span {{ tab.title }}
+
+
+	.screen
+		.item(
+			ng-repeat="log in logs | logMonitorFilterVerbose:$storage.logMonitor.verbose | limitTo:$storage.logMonitor.limit:0 - $storage.logMonitor.limit",
+			ng-class="getItemClassDef(log.tags)"
+		)
+			span.tags [{{ log.displayTags.join(', ') }}]
+			span.msg(ng-bind-html="log.data | ansi2html")
+
+
+	footer
 		.col
 			label
 				span Limit
@@ -11,8 +39,3 @@
 					type="checkbox"
 				)
 				span Verbose
-	.screen
-		.item(
-			ng-repeat="log in logs | logMonitorFilterVerbose:$storage.logMonitor.verbose | limitTo:$storage.logMonitor.limit:0 - $storage.logMonitor.limit")
-			span.tags [{{ (log.tags | logMonitorTags).join(', ') }}]
-			span.msg(ng-bind-html="log.data | ansi2html")

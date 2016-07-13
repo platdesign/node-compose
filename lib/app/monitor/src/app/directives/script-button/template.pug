@@ -1,0 +1,12 @@
+.n2sXE18g
+	button.btn--default(
+		type="button",
+		ng-disabled="script.state !== 'idle' && script.state !== 'running'",
+		ng-click="$event.stopPropagation(); script.state === 'idle' ? start() : stop()",
+		class="state-{{script.state}}"
+	)
+		.fa.fa-play(ng-if="script.state === 'idle'")
+		.fa.fa-stop(ng-if="script.state === 'running'")
+		.fa.fa-refresh.fa-spin(ng-if="script.state !== 'idle' && script.state !== 'running'")
+		span {{ script.name }}
+

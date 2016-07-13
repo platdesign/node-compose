@@ -1,0 +1,19 @@
+.n2sXE18g {
+	& + .n2sXE18g {
+		margin-left: 5px;
+	}
+
+	button {
+		width: 100%;
+
+		&.state-idle {
+			background:$color-ci-haze-dark;
+			color: $color-ci-font;
+		}
+
+		&.state-running {
+			background:$color-on;
+		}
+
+	}
+}

@@ -24,9 +24,16 @@
 							.env(ng-repeat="env in image.config.environment")
 								span {{ env }}
 
+
+
 		.controls
-			image-controls(image="image")
+			image-controls(image="image", rows)
+			hr
+			image-script-controls(image="image", rows)
 
 
 	section.logs
-		log-monitor(tags="['#image', image.id]")
+		log-monitor(
+			filter="{ every: [image.id] }",
+			config="monitorConfig"
+		)
