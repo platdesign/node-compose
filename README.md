@@ -6,7 +6,7 @@ Start node-processes as with docker-compose and with a neat little ui.
 
 
 
-[![Build Status](https://img.shields.io/travis/platdesign/node-compose.svg)](https://travis-ci.org/platdesign/node-compose) 
+[![Build Status](https://travis-ci.org/platdesign/node-compose.svg?branch=master)](https://travis-ci.org/platdesign/node-compose) 
 [![Package Quality](http://npm.packagequality.com/shield/node-compose.svg)](http://packagequality.com/#?package=node-compose)
 [![Gitter](https://badges.gitter.im/platdesign/node-compose.svg)](https://gitter.im/platdesign/node-compose?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)	
 
