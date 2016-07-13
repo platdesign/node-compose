@@ -2681,23 +2681,23 @@ a, [ng-click], [ui-sref] {
     -moz-osx-font-smoothing: grayscale;
     padding: 10px;
     font-family: Courier;
-    font-size: .9em;
-    line-height: 1.3;
+    font-size: .92em;
+    line-height: 1.25;
     overflow: auto;
     min-height: 400px;
     max-height: 400px;
     height: 400px;
-    background: #191c1d; }
+    background: #232728; }
     .d4Ijm7XD > .screen .item {
       white-space: pre-wrap; }
       .d4Ijm7XD > .screen .item > .tags:after {
         content: ' '; }
-      .d4Ijm7XD > .screen .item.verbose .tags {
-        color: yellow; }
       .d4Ijm7XD > .screen .item.log .tags {
-        color: green; }
+        color: #0fdc77; }
+      .d4Ijm7XD > .screen .item.verbose .tags {
+        color: #d2d22d; }
       .d4Ijm7XD > .screen .item.error .tags {
-        color: red; }
+        color: #ff4d4d; }
   .d4Ijm7XD > footer {
     transition: all .3s;
     background: #1b7ca4;
