@@ -586,7 +586,7 @@ module.exports = function() {
 				expect(e.tags)
 					.to.be.an.array()
 					.and.have.length(4)
-					.and.contain(['verbose', 'log', 'qwe', '#process']);
+					.and.contain(['#verbose', 'log', 'qwe', '#process']);
 
 			})
 			.toPromise()

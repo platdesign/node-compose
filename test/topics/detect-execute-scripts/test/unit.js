@@ -47,7 +47,7 @@ module.exports = function(App) {
 				let image = app._images['serviceA'];
 
 				expect(image.config.scripts)
-					.to.be.an.object()
+					.to.be.an.array()
 					.and.have.length(1);
 
 			});
@@ -99,7 +99,7 @@ module.exports = function(App) {
 
 					expect(e.tags)
 						.to.be.an.array()
-						.contain(['verbose', 'log', '#process', '#script', 'test']);
+						.contain(['#verbose', 'log', '#process', '#script', 'test']);
 
 				})
 				.toPromise();
@@ -125,7 +125,7 @@ module.exports = function(App) {
 
 							expect(e.tags)
 								.to.be.an.array()
-								.contain(['verbose', 'log', '#process', '#script', 'test']);
+								.contain(['#verbose', 'log', '#process', '#script', 'test']);
 
 						})
 						.toPromise();
