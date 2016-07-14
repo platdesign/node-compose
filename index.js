@@ -33,7 +33,9 @@ const app = App({
 		'restart',
 		'images',
 		'exit',
-		'monitor'
+		'monitor',
+		'start-script',
+		'stop-script',
 	].forEach( registerCMD )
 
 

@@ -19,9 +19,6 @@ module.exports = function(App) {
 			});
 
 			image = app._images['service'];
-
-
-
 		});
 
 		afterEach(() => {
@@ -32,43 +29,96 @@ module.exports = function(App) {
 
 		describe('service', () => {
 
-			it('should stop all processes on app.close()', () => {
+			describe('starting image and long-script', () => {
 
-				return Promise.all([
-					image.start(),
-					image.startScript('long')
-				])
-				.then(() => {
-					return app.close()
-				})
-				.then(() => {
+
+				beforeEach(() => {
+					return Promise.all([
+						app.commands.start({ image: 'service'}),
+						app.commands.startScript({ image: 'service', script: 'long' })
+					]);
+				});
+
+				it('image should have state: running', () => {
 
 					expect(image.imageProcess.getState())
-						.to.equal('idle');
+						.to.equal('running');
+
+				});
+
+				it('long-script should have state: running', () => {
 
 					expect(image.scriptProcesses['long'].getState())
+						.to.equal('running');
+
+				});
+
+				it('short-script should have state: idle', () => {
+
+					expect(image.scriptProcesses['short'].getState())
 						.to.equal('idle');
 
 				});
 
-			});
 
+				describe('after reloading', () => {
 
+					beforeEach(() => {
+						return app.commands.reload();
+					});
 
-			it('should stop all processes on config-reload and start previously running ones again', () => {
+					it('image should have state: running', () => {
 
-				return Promise.all([
-					image.start(),
-					image.startScript('long')
-				])
-				.then(() => {
-					return app.commands.reload();
-				})
-				.then(() => {
+						expect(image.imageProcess.getState())
+							.to.equal('running');
 
-					console.log(app.getState());
+					});
+
+					it('long-script should have state: running', () => {
+
+						expect(image.scriptProcesses['long'].getState())
+							.to.equal('running');
+
+					});
+
+					it('short-script should have state: idle', () => {
+
+						expect(image.scriptProcesses['short'].getState())
+							.to.equal('idle');
+
+					});
 
 				});
+
+				describe('after closing the app', () => {
+
+					beforeEach(() => {
+						return app.close();
+					});
+
+					it('image should have state: idle', () => {
+
+						expect(image.imageProcess.getState())
+							.to.equal('idle');
+
+					});
+
+					it('long-script should have state: idle', () => {
+
+						expect(image.scriptProcesses['long'].getState())
+							.to.equal('idle');
+
+					});
+
+					it('short-script should have state: idle', () => {
+
+						expect(image.scriptProcesses['short'].getState())
+							.to.equal('idle');
+
+					});
+
+				});
+
 
 			});
 
