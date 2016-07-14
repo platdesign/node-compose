@@ -6,7 +6,7 @@
     "email": "mail@platdesign.de",
     "url": "https://github.com/platdesign"
   },
-  "version": "0.1.12",
+  "version": "0.1.13",
   "license": "MIT",
   "dependencies": {
     "cli-table": "^0.3.1",
