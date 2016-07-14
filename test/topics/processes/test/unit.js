@@ -32,22 +32,46 @@ module.exports = function(App) {
 
 		describe('service', () => {
 
-			it('asd', () => {
+			it('should stop all processes on app.close()', () => {
 
 				return Promise.all([
 					image.start(),
 					image.startScript('long')
 				])
 				.then(() => {
-					app.close();
-
-					console.log('TODO: Test if all processes are down');
-
+					return app.close()
 				})
+				.then(() => {
 
+					expect(image.imageProcess.getState())
+						.to.equal('idle');
 
+					expect(image.scriptProcesses['long'].getState())
+						.to.equal('idle');
+
+				});
 
 			});
+
+
+
+			it('should stop all processes on config-reload and start previously running ones again', () => {
+
+				return Promise.all([
+					image.start(),
+					image.startScript('long')
+				])
+				.then(() => {
+					return app.commands.reload();
+				})
+				.then(() => {
+
+					console.log(app.getState());
+
+				});
+
+			});
+
 
 		});
 
