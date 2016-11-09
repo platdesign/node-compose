@@ -22,8 +22,8 @@
 			ng-repeat="log in logs track by $index",
 			ng-class="getItemClassDef(log.tags)"
 		)
-			span.tags [{{ log.displayTags.join(', ') }}]
-			span.msg(ng-bind-html="log.data | ansi2html")
+			span.tags [{{ ::log.displayTags.join(', ') }}]
+			span.msg(ng-bind-html="::log.data | ansi2html")
 
 
 	footer
