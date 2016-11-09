@@ -2,6 +2,7 @@
 @import 'normalize-scss/sass/_normalize';
 @include normalize();
 
+
 html {
 	height: 100%;
 }
@@ -69,9 +70,6 @@ a, [ng-click], [ui-sref] {
 	margin-left: .4em;
 	vertical-align: baseline;
 }
-
-$fa-font-path: '/assets/fonts';
-@import 'font-awesome/scss/font-awesome';
 
 
 @import './app/styles';

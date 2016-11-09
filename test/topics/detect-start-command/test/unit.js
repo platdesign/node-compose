@@ -7,7 +7,9 @@ const path = require('path');
 
 module.exports = function(App) {
 
-	describe('Testing start command configuration', () => {
+	describe('Testing start command configuration', function() {
+		this.timeout(0);
+
 
 		let app;
 

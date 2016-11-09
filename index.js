@@ -36,9 +36,7 @@ const app = App({
 		'monitor',
 		'start-script',
 		'stop-script',
-	].forEach( registerCMD )
-
-
+	].forEach( registerCMD );
 
 
 

@@ -17,10 +17,9 @@
 				.fa(class="{{ tab.icon }}", ng-if="tab.icon")
 				span {{ tab.title }}
 
-
 	.screen
 		.item(
-			ng-repeat="log in logs | logMonitorFilterVerbose:$storage.logMonitor.verbose | limitTo:$storage.logMonitor.limit:0 - $storage.logMonitor.limit",
+			ng-repeat="log in logs track by $index",
 			ng-class="getItemClassDef(log.tags)"
 		)
 			span.tags [{{ log.displayTags.join(', ') }}]
@@ -31,11 +30,11 @@
 		.col
 			label
 				span Limit
-				select(ng-model="$storage.logMonitor.limit", ng-options="item as item for item in [10, 50, 100]")
+				select(ng-model="monitorConfig.limit", ng-options="item as item for item in [10, 50, 100, 500, 1000]")
 		.col
 			label
 				input(
-					ng-model="$storage.logMonitor.verbose",
+					ng-model="monitorConfig.verbose",
 					type="checkbox"
 				)
 				span Verbose
