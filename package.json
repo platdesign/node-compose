@@ -24,7 +24,7 @@
     "pidusage": "^1.0.4",
     "ps-tree": "^1.1.0",
     "rx": "^4.1.0",
-    "socket.io": "^1.4.8",
+    "socket.io": "^2.0.0",
     "update-notifier": "^1.0.2",
     "vorpal": "^1.11.2",
     "which": "^1.2.10"
