@@ -21,22 +21,21 @@ const app = App({
 	logger: vorpal.log.bind(vorpal)
 });
 
-
 // RegisterVorpal-Plugins
 
-	// Commands
-	[
-		'ps',
-		'reload',
-		'start',
-		'stop',
-		'restart',
-		'images',
-		'exit',
-		'monitor',
-		'start-script',
-		'stop-script',
-	].forEach( registerCMD );
+// Commands
+[
+	'ps',
+	'reload',
+	'start',
+	'stop',
+	'restart',
+	'images',
+	'exit',
+	'monitor',
+	'start-script',
+	'stop-script',
+].forEach( registerCMD );
 
 
 
